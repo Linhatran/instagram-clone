@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p.OR {
+  width: 90%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 10px;
+}
+p.OR span {
+  background: #fff;
+}
+input::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.nav-link {
+  color: rgb(37, 56, 163);
+  font-weight: 600;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+p.navbar-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
