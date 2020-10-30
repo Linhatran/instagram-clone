@@ -16,26 +16,26 @@
     <nav class="border-bottom">
       <div class="container-md container-fluid">
         <div class="navbar flex-row py-0 px-md-5">
-          <a href="#" class="navbar-brand"
+          <a href="#" class="navbar-brand mr-0"
             ><img
               src="../public/images/text-logo.png"
               alt=""
               width="110rem"
               class="py-0"
           /></a>
-          <form class="form-inline" style="display: none">
+          <form class="form-inline" id="search-bar" style="display: none">
             <input
-              class="form-control mr-sm-2"
+              class="form-control bg-light"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
           </form>
           <ul class="navbar-nav flex-row align-items-center">
-            <li class="nav-item ml-4 h5">
+            <li class="nav-item">
               <svg
-                width="1em"
-                height="1em"
+                width="1.25rem"
+                height="1.25rem"
                 viewBox="0 0 16 16"
                 class="bi bi-house-door"
                 fill="currentColor"
@@ -51,10 +51,10 @@
                 />
               </svg>
             </li>
-            <li class="nav-item ml-4 h5">
+            <li class="nav-item ml-4">
               <svg
-                width="1em"
-                height="1em"
+                width="1.25rem"
+                height="1.25rem"
                 viewBox="0 0 16 16"
                 class="bi bi-envelope"
                 fill="currentColor"
@@ -66,10 +66,10 @@
                 />
               </svg>
             </li>
-            <li class="nav-item ml-4 h5">
+            <li class="nav-item ml-4">
               <svg
-                width="1em"
-                height="1.0625em"
+                width="1.25rem"
+                height="1.25rem"
                 viewBox="0 0 16 17"
                 class="bi bi-compass"
                 fill="currentColor"
@@ -84,10 +84,10 @@
                 />
               </svg>
             </li>
-            <li class="nav-item ml-4 h5">
+            <li class="nav-item ml-4">
               <svg
-                width="1em"
-                height="1em"
+                width="1.25rem"
+                height="1.25rem"
                 viewBox="0 0 16 16"
                 class="bi bi-heart"
                 fill="currentColor"
@@ -99,10 +99,10 @@
                 />
               </svg>
             </li>
-            <li class="nav-item ml-4 h5">
+            <li class="nav-item ml-4">
               <svg
-                width="1em"
-                height="1em"
+                width="1.25rem"
+                height="1.25rem"
                 viewBox="0 0 16 16"
                 class="bi bi-person-circle"
                 fill="currentColor"
@@ -127,9 +127,9 @@
     </nav>
     <div class="bg-light" style="height: 100vh">
       <div class="container-fluid container-md px-0">
-        <div class="border-bottom px-md-5 mx-md-5" id="header">
+        <div class="border-bottom" id="header">
           <div id="avi">
-            <div class="col-10 mt-4 ml-2">
+            <div class="col-10 mt-4 mt-md-5 ml-2">
               <img
                 src="../public/images/avi.jpg"
                 width="90%"
@@ -139,55 +139,62 @@
             </div>
           </div>
 
-          <div class="pl-3">
-            <div
-              class="d-flex flex-row align-items-start mt-3"
-              style="flex-wrap: wrap; height: 100px"
-            >
-              <p class="lead mb-0 mr-4 pl-0" style="font-size: 1.8rem">
-                natgeotravel
-              </p>
+          <div
+            class="d-flex flex-row align-items-start mt-3 mt-md-5"
+            id="first-row"
+            style="flex-wrap: wrap; height: 100px"
+          >
+            <p class="lead mb-0 mr-3 pl-0" style="font-size: 1.8rem">
+              natgeotravel
+            </p>
 
+            <svg
+              width="1.8rem"
+              height="1.8rem"
+              viewBox="0 0 16 16"
+              class="bi bi-three-dots mt-2 pb-md-2"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+              />
+            </svg>
+            <button
+              class="btn btn-primary btn-sm mr-2"
+              style="font-size: 1rem; width: 5rem; height: 2rem"
+            >
+              Follow
+            </button>
+            <button
+              class="btn btn-primary btn-sm mr-3"
+              style="width: 2.4rem; height: 2rem"
+            >
               <svg
-                width="1.8rem"
-                height="1.8rem"
+                width="1em"
+                height="1em"
                 viewBox="0 0 16 16"
-                class="bi bi-three-dots align-self-center"
+                class="bi bi-caret-down-fill"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                  d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
                 />
               </svg>
-              <button
-                class="btn btn-primary btn-sm mr-2"
-                style="font-size: 1rem; width: 5rem; height: 2rem"
-              >
-                Follow
-              </button>
-              <button
-                class="btn btn-primary btn-sm mr-3"
-                style="width: 2.4rem; height: 2rem"
-              >
-                <svg
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  class="bi bi-caret-down-fill"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                  />
-                </svg>
-              </button>
+            </button>
+          </div>
+
+          <div id="stats" style="display: none">
+            <div class="d-flex flex-row">
+              <p class="mr-3"><strong>14,019</strong> posts</p>
+              <p class="mr-3"><strong>40.7m</strong> followers</p>
+              <p class="mr-3"><strong>90</strong> following</p>
             </div>
           </div>
 
-          <div id="text" class="pl-3">
+          <div id="text" class="pl-3 pl-md-0">
             <h6 class="mb-1">National Geographic Travel</h6>
             <p class="mb-0" style="font-size: 0.9rem">
               It's a big world. Explore it through the lens of our photographers
@@ -207,8 +214,8 @@
             </p>
           </div>
 
-          <div class="border-top">
-            <div class="row d-flex py-2">
+          <div class="border-top small-screen-stats">
+            <div class="row d-flex py-2 overflow-auto">
               <div class="col-4 text-center">
                 <p class="mb-0" style="font-size: 0.9rem; font-weight: 600">
                   14,016
@@ -235,7 +242,7 @@
           </div>
         </div>
         <!-- End of header -->
-        <div class="border-bottom d-flex justify-content-around">
+        <div class="mx-md-5 d-flex justify-content-around">
           <div class="h4 my-1 py-2 text-primary">
             <svg
               width="1em"
@@ -273,28 +280,72 @@
         </div>
 
         <!-- start of gallery -->
-        <div id="gallery">
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
-          <img src="https://picsum.photos/200" alt="" class="img-responsive" />
+        <div id="gallery" class="border-top">
+          <img
+            src="https://images.unsplash.com/photo-1465188035480-cf3a60801ea5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1387&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1443181844940-9042ec79924b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1443181994330-3e365ff8949e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1517847624229-2885be08059a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1517325619117-a469256220f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1517821099606-cef63a9bcda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1448&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1568398102087-33843c9904e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1565104013743-e8426eb9de33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1057&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1556571634-062b79aae99e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1558375358-51f256b875a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
+            alt=""
+            class="img-responsive"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1601707388722-9807acc8b936?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
+            alt=""
+            class="img-responsive"
+          />
         </div>
       </div>
     </div>
