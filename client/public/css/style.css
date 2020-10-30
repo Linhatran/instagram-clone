@@ -28,3 +28,34 @@ p.navbar-text {
   font-weight: 600;
   white-space: nowrap;
 }
+
+#header {
+  display: grid;
+
+  grid-template-columns: 150px 250px auto;
+  grid-template-rows: 150px auto auto;
+}
+#text {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+.border-top {
+  grid-column: 1/4;
+  grid-row: 3;
+}
+#gallery {
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: repeat(7, 1fr);
+  column-gap: 3px;
+  row-gap: 3px;
+}
+#gallery img {
+  grid-column: 1/2;
+  width: 32.5%;
+  margin-bottom: 3px;
+}
+/* @media (min-width: 576px) { 
+    #avi {
+        grid
+    }
+ } */
