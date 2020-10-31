@@ -55,6 +55,9 @@ li:hover,
 img:hover {
   cursor: pointer;
 }
+img:hover:after {
+  content: 'hi';
+}
 img:hover {
   -webkit-filter: brightness(70%);
   -webkit-transition: all 0.2s ease;
@@ -63,6 +66,7 @@ img:hover {
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+
 @media (min-width: 992px) {
   #search-bar {
     display: inline !important;
