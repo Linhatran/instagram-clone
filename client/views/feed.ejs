@@ -163,12 +163,14 @@
             </svg>
             <button
               class="btn btn-primary btn-sm mr-2"
+              id="follow"
               style="font-size: 1rem; width: 5rem; height: 2rem"
             >
               Follow
             </button>
             <button
               class="btn btn-primary btn-sm mr-3"
+              id="arrow-down"
               style="width: 2.4rem; height: 2rem"
             >
               <svg
@@ -281,7 +283,7 @@
 
         <!-- start of gallery -->
         <div id="gallery" class="border-top">
-          <img
+          <!-- <img
             src="https://images.unsplash.com/photo-1465188035480-cf3a60801ea5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
             alt=""
             class="img-responsive"
@@ -340,9 +342,60 @@
             src="https://images.unsplash.com/photo-1601707388722-9807acc8b936?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
             alt=""
             class="img-responsive"
-          />
+          /> -->
         </div>
       </div>
     </div>
+    <script>
+      $(document).ready(function () {
+        $.get(
+          'https://image-server-codesmith.firebaseapp.com/images',
+          async (data, status) => {
+            await data.forEach((url) => {
+              $('#gallery').append(
+                `<img src=${url} onerror="this.onerror=null;this.src="https://images.unsplash.com/photo-1568398102087-33843c9904e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1412&q=80"; class="img-responsive"/>`
+              );
+            });
+          }
+        );
+
+        // $('#follow').click(function () {
+        //   $(this)
+        //     .toggleClass('btn-primary btn-outline-secondary')
+        //     .css('color', '#000');
+
+        //   $('#arrow-down')
+        //     .toggleClass('btn-primary btn-outline-secondary')
+        //     .css('color', '#000');
+        // });
+        $('#follow').click(function () {
+          // if ($(this).html() !== 'Follow') {
+          //   $(this).text('Follow');
+          // } else {
+          //   $(this).html(`<svg
+          //    width='1em'
+          //    height='1em'
+          //    viewBox='0 0 16 16'
+          //    class='bi bi-person-check-fill'
+          //    fill='currentColor'
+          //    xmlns='http://www.w3.org/2000/svg'
+          //  >
+          //    <path
+          //      fill-rule='evenodd'
+          //      d='M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9.854-2.854a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z'
+          //    />
+          //  </svg>`);
+          // }
+          $(this)
+            .toggleClass('text-dark')
+            .toggleClass('toBeReplaced')
+            .toggleClass('btn-primary btn-outline-secondary');
+
+          $('#arrow-down')
+            .toggleClass('btn-primary btn-outline-secondary')
+            .toggleClass('text-dark');
+        });
+      });
+    </script>
   </body>
 </html>
