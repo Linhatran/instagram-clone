@@ -100,7 +100,7 @@
                 width="1.25rem"
                 height="1.25rem"
                 viewBox="0 0 16 16"
-                class="bi bi-person-circle"
+                class="bi bi-person-circle align-self-center"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -123,19 +123,38 @@
     </nav>
     <!-- End of nav bar -->
     <div class="bg-light position-relative mt-5">
-      <div class="container-fluid container-md px-0 px-sm-3 px-md-5">
-        <div
-          class="postContainer col-md-7 border"
-          style="background-color: pink"
+      <div
+        class="container-fluid container-md px-0 px-sm-4 px-md-5"
+        id="feed"
+      ></div>
+    </div>
+    <script>
+      //what needs to be done:
+      //randomize usernames for feed
+      //randomize user avis
+      //add hearts, comments, airplanes, save/bookmarks
+      //add like function and increase like counts
+      //add comments CRUD
+      //add "hours ago"
+
+      $.get('https://image-server-codesmith.firebaseapp.com/images', function (
+        data,
+        status
+      ) {
+        data.forEach((url) => {
+          $('#feed').append(
+            `<div
+          class="postContainer col-md-7 border px-0 mb-3"
+          style="background-color: #fff"
         >
-          <div class="d-flex flex-row justify-content-between">
-            <div class="accounts col-4 flex-row d-flex">
-              <div class="col-3">
+          <div class="d-flex flex-row">
+            <div class="accounts col-10 flex-row d-flex">
+              <div class="col-1 pl-0 mr-2">
                 <svg
-                  width="1.25rem"
-                  height="1.25rem"
+                  width="2rem"
+                  height="2rem"
                   viewBox="0 0 16 16"
-                  class="bi bi-person-circle"
+                  class="bi bi-person-circle mt-2"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -152,12 +171,12 @@
                   />
                 </svg>
               </div>
-              <div class="col-11">
-                <p>username</p>
-                <p>location</p>
+              <div class="col-10 pl-0">
+                <p class="mt-2 pt-1">username</p>
+                <!-- need to randomize this username -->
               </div>
             </div>
-            <div class="col-12">
+            <div class="col-2 text-right align-self-center">
               <svg
                 width="1rem"
                 height="1rem"
@@ -173,8 +192,23 @@
               </svg>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+
+          <div class="post-img">
+            <img
+              src=${url}
+              alt=""
+              class="img-responsive"
+              width="100%"
+            />
+          </div>
+        </div>`
+          );
+          let img = $('img').last();
+          $(img).on('error', function () {
+            $(img).closest('.postContainer').remove();
+          });
+        });
+      });
+    </script>
   </body>
 </html>
