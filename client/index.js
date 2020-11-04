@@ -30,7 +30,9 @@ app.post('/login', (req, res) => {
     res.send('Incorrect username or password. Please try again!');
   }
 });
-
+app.get('/feed', (req, res) => {
+  res.render('feed');
+});
 app.listen(8080, () => {
   console.log('Listening on port 8080!');
 });

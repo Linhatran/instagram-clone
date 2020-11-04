@@ -283,7 +283,7 @@
 
         <!-- start of gallery -->
         <div id="gallery" class="border-top">
-          <!-- <img
+          <img
             src="https://images.unsplash.com/photo-1465188035480-cf3a60801ea5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
             alt=""
             class="img-responsive"
@@ -342,26 +342,26 @@
             src="https://images.unsplash.com/photo-1601707388722-9807acc8b936?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
             alt=""
             class="img-responsive"
-          /> -->
+          />
         </div>
       </div>
     </div>
     <script>
       $(window).ready(function () {
-        $.get(
-          'https://image-server-codesmith.firebaseapp.com/images',
-          function (data, status) {
-            data.forEach((url) => {
-              $('#gallery').append(
-                `<img src=${url} class="img-responsive mr-2 mb-2">`
-              );
-              let img = $('img').last();
-              $(img).on('error', function () {
-                $(img).remove();
-              });
-            });
-          }
-        );
+        // $.get(
+        //   'https://image-server-codesmith.firebaseapp.com/images',
+        //   function (data, status) {
+        //     data.forEach((url) => {
+        //       $('#gallery').append(
+        //         `<img src=${url} class="img-responsive mr-2 mb-2">`
+        //       );
+        //       let img = $('img').last();
+        //       $(img).on('error', function () {
+        //         $(img).remove();
+        //       });
+        //     });
+        //   }
+        // );
 
         $('#follow').click(function () {
           $(this)
