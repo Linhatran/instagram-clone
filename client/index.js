@@ -25,7 +25,7 @@ app.post('/login', (req, res) => {
   }
 
   if (allUsernames.includes(username) && allPasswords.includes(password)) {
-    res.render('feed');
+    res.render('page');
   } else {
     res.send('Incorrect username or password. Please try again!');
   }
