@@ -205,9 +205,11 @@
             </div>
             <div class="col-6 text-right">
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-bookmark mr-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
-                
-            </svg>
+                    <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                </svg>
+                <svg style="display: none" width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-bookmark-fill mr-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5V2z"/>
+                </svg>
             </div>   
         </div>
         <p class="pl-3 mt-2 mb-1" id="likes" style="font-size: 0.9rem; font-weight: 600">${randomLikes(
@@ -317,6 +319,27 @@
           });
         });
 
+        //handle save tag
+        $('body').on('click', '.bi-bookmark', function () {
+          $(this).attr('style', function (index, attr) {
+            return attr === undefined ? 'display: none' : null;
+          });
+          $(this)
+            .siblings()
+            .attr('style', function (index, attr) {
+              return attr === 'display: none' ? null : 'display: none';
+            });
+        });
+        $('body').on('click', '.bi-bookmark-fill', function () {
+          $(this).attr('style', function (index, attr) {
+            return attr === undefined ? 'display: none' : 'display: none';
+          });
+          $(this)
+            .siblings()
+            .attr('style', function (index, attr) {
+              return attr === 'display: none' ? null : 'display: none';
+            });
+        });
         //handle post button disability
         $('body').on('click', 'input', function (e) {
           $(this).on('keyup', function () {
