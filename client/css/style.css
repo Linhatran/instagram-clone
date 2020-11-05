@@ -28,8 +28,7 @@ p.navbar-text {
   font-weight: 600;
   white-space: nowrap;
 }
-
-/*************** feed.html ****************/
+/*************** page.html ****************/
 #header {
   display: grid;
   grid-template-columns: 150px 220px auto;
@@ -53,13 +52,13 @@ p.navbar-text {
   margin-bottom: 3px;
 }
 li:hover,
-img:hover {
+nav:hover {
   cursor: pointer;
 }
 img:hover:after {
   content: 'hi';
 }
-img:hover {
+#gallery img:hover {
   -webkit-filter: brightness(70%);
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -67,19 +66,19 @@ img:hover {
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.toBeReplaced {
-  visibility: hidden;
-  position: relative;
+
+/************ feed.html **********/
+svg:hover {
+  cursor: pointer;
 }
-.toBeReplaced:after {
-  visibility: visible;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: 'Followed';
-  padding: 0.2rem 0.55rem;
-  border: 1px solid rgb(119, 119, 119);
-  border-radius: 3px;
+input:focus {
+  outline: none;
+}
+input {
+  font-size: 0.9rem;
+}
+input::-webkit-input-placeholder {
+  font-size: 0.9rem;
 }
 @media (min-width: 992px) {
   #search-bar {

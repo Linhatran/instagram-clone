@@ -7,21 +7,17 @@
       src="https://kit.fontawesome.com/c9679b13d6.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <nav class="border-bottom">
+    <nav class="border-bottom fixed-top" style="background-color: #fff">
       <div class="container-md container-fluid">
         <div class="navbar flex-row py-0 px-md-5">
-          <a href="#" class="navbar-brand mr-0"
-            ><img
-              src="/images/text-logo.png"
-              alt=""
-              width="110rem"
-              class="py-0"
+          <a href="feed.html" class="navbar-brand mr-0"
+            ><img src="images/text-logo.png" alt="" width="110rem" class="py-0"
           /></a>
           <form class="form-inline" id="search-bar" style="display: none">
             <input
@@ -32,25 +28,27 @@
             />
           </form>
           <ul class="navbar-nav flex-row align-items-center">
-            <li class="nav-item">
-              <svg
-                width="1.25rem"
-                height="1.25rem"
-                viewBox="0 0 16 16"
-                class="bi bi-house-door"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"
-                />
-                <path
-                  fill-rule="evenodd"
-                  d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-                />
-              </svg>
-            </li>
+            <a href="feed.html" class="text-dark">
+              <li class="nav-item">
+                <svg
+                  width="1.25rem"
+                  height="1.25rem"
+                  viewBox="0 0 16 16"
+                  class="bi bi-house-door"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+                  />
+                </svg>
+              </li>
+            </a>
             <li class="nav-item ml-4">
               <svg
                 width="1.25rem"
@@ -101,6 +99,7 @@
             </li>
             <li class="nav-item ml-4">
               <svg
+                id="homepage"
                 width="1.25rem"
                 height="1.25rem"
                 viewBox="0 0 16 16"
@@ -125,13 +124,13 @@
         </div>
       </div>
     </nav>
-    <div class="bg-light">
+    <div class="bg-light position-relative mt-5">
       <div class="container-fluid container-md px-0">
         <div class="border-bottom" id="header">
           <div id="avi">
             <div class="col-10 mt-4 mt-md-5 ml-2">
               <img
-                src="/images/avi.jpg"
+                src="images/avi.jpg"
                 width="90%"
                 alt=""
                 class="rounded-circle"
@@ -163,14 +162,12 @@
             </svg>
             <button
               class="btn btn-primary btn-sm mr-2"
-              id="follow"
               style="font-size: 1rem; width: 5rem; height: 2rem"
             >
               Follow
             </button>
             <button
               class="btn btn-primary btn-sm mr-3"
-              id="arrow-down"
               style="width: 2.4rem; height: 2rem"
             >
               <svg
@@ -347,31 +344,9 @@
       </div>
     </div>
     <script>
-      $(window).ready(function () {
-        // $.get(
-        //   'https://image-server-codesmith.firebaseapp.com/images',
-        //   function (data, status) {
-        //     data.forEach((url) => {
-        //       $('#gallery').append(
-        //         `<img src=${url} class="img-responsive mr-2 mb-2">`
-        //       );
-        //       let img = $('img').last();
-        //       $(img).on('error', function () {
-        //         $(img).remove();
-        //       });
-        //     });
-        //   }
-        // );
-
-        $('#follow').click(function () {
-          $(this)
-            .toggleClass('text-dark')
-            .toggleClass('toBeReplaced')
-            .toggleClass('btn-primary btn-outline-secondary');
-
-          $('#arrow-down')
-            .toggleClass('btn-primary btn-outline-secondary')
-            .toggleClass('text-dark');
+      $(document).ready(function () {
+        $('#homepage').on('click', function () {
+          window.location.href = 'page.html';
         });
       });
     </script>
